@@ -8,8 +8,8 @@ module Devise
       extend ActiveSupport::Concern
 
       included do
-        def self.find_for_jwt_authentication(address)
-          find_by(public_address => address)
+        def self.find_for_web3_authentication(address)
+          find_by(public_address: address)
         end
       end
     end

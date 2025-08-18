@@ -33,4 +33,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'eth', '~> 0.5.15'
   spec.add_dependency 'redis'
 
+  spec.add_development_dependency 'rails'
+  spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency 'sqlite3'
+
+  spec.add_development_dependency 'pry'
 end

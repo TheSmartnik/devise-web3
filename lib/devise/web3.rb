@@ -12,7 +12,7 @@ module Devise
 
     Devise.add_module :web3_authenticatable,
       strategy: true,
-      model: 'web3/model/web3_authenticatable',
+      model: 'web3/models/web3_authenticatable',
       no_input: true
   end
 end

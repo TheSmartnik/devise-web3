@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'fixtures/rails_app/config/environment'
 
-RSpec.describe "DeviceSessions", type: :request do
+RSpec.describe "Web3Authenticatable", type: :request do
   include Devise::Test::IntegrationHelpers
   include_context 'fixtures'
 
@@ -29,14 +29,29 @@ RSpec.describe "DeviceSessions", type: :request do
       }
     end
 
-    before do
-      User.create(public_address: key.address.to_s.downcase)
-    end
+    describe "sign_in" do
+      context "when user doesn't exist" do
+        it 'should creates user' do
+          result = post "/users/sign_in", params: params
 
-    it 'should authenticate user' do
-      result = post "/users/sign_in", params: params
+          expect(response.status).to eq(201)
+          expect(User.last.public_address).to eq(key.address.to_s.downcase)
+        end
+      end
 
-      expect(response.status).to eq(201)
+      context 'when user exist' do
+        before do
+          User.create(public_address: key.address.to_s.downcase)
+        end
+
+        it 'authenticates user' do
+          result = post "/users/sign_in", params: params
+
+          expect(response.status).to eq(201)
+          expect(User.count).to eq(1)
+          expect(User.last.public_address).to eq(key.address.to_s.downcase)
+        end
+      end
     end
   end
 end

@@ -1,6 +1,7 @@
 # Devise::Web3
 
-`Devise::Web3` allows to easily add support for authentication with etherium wallet.
+`Devise-web3` allows to easily implement login with metamask or any other ethereum wallet providers. It works by providing a nonce for a user to sign and then cryptographically checking that signature is valid. This allows for a simple one click login popular among web3 apps.
+
 
 ## Installation
 

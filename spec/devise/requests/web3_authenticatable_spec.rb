@@ -53,5 +53,17 @@ RSpec.describe "Web3Authenticatable", type: :request do
         end
       end
     end
+
+    describe "web3_nonce" do
+      it 'should generate nonce' do
+        result = get "/users/nonce"
+
+        expect(response.status).to eq(200)
+
+        json = JSON.parse(response.body)
+        expect(json['nonce']).to be_present
+        expect(json['nonce_id']).to be_present
+      end
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_18_072010) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_12_103448) do
   create_table "allowlisted_jwts", force: :cascade do |t|
     t.string "jti", null: false
     t.string "aud"
@@ -115,9 +115,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_18_072010) do
   create_table "users", force: :cascade do |t|
     t.string "encrypted_password"
     t.string "email"
-    t.string "public_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "public_address"
+    t.index ["public_address"], name: "index_users_on_public_address"
   end
 
   add_foreign_key "allowlisted_jwts", "jwt_with_allowlist_users"

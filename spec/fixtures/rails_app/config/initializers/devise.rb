@@ -113,6 +113,11 @@ Devise.setup do |config|
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
 
+  # ==> Configuration for :web3_authenticatable
+  # config.web3 do |web3|
+  #   web3.redis_url = nil
+  # end
+
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
   # confirming their account. For instance, if set to 2.days, the user will be

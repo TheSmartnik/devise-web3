@@ -7,11 +7,16 @@ require 'devise/web3/engine'
 require 'devise/web3/models/web3_authenticatable'
 require 'devise/web3/strategies/web3_authenticatable'
 require 'devise/web3/routes'
+require 'devise/web3/config'
 
 module Devise
+  def self.web3
+    yield(Devise::Web3::Config)
+  end
 
   module Web3
     class Error < StandardError; end
+
 
     Devise.add_module :web3_authenticatable,
       strategy: true,

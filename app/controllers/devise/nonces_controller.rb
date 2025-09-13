@@ -9,6 +9,6 @@ class Devise::NoncesController < DeviseController
   private
 
   def redis_store
-    @redis_store ||= Devise::Web3::RedisStore.new(nil)
+    @redis_store ||= Devise::Web3::RedisStore.new
   end
 end

@@ -3,7 +3,7 @@ module Devise
   module Strategies
     class Web3Authenticatable < Authenticatable
       def authenticate!
-        redis_store = Devise::Web3::RedisStore.new(nil)
+        redis_store = Devise::Web3::RedisStore.new
 
         nonce = redis_store.fetch_nonce(nonce_id)
         return fail!("Nonce coldn't be found. Perhaps it's already expired") if nonce.blank?

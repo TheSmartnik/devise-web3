@@ -8,8 +8,8 @@ module Devise
       TTL = 10.minutes.to_i
       NONCE_KEY = "web3-auth-nonce"
 
-      def initialize(redis_url)
-        @redis = Redis.new(url: redis_url)
+      def initialize
+        @redis = Redis.new(url: Devise::Web3::Config.redis_url)
       end
 
       def generate_nonce_with_id

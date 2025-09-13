@@ -15,7 +15,7 @@ RSpec.describe "Web3Authenticatable", type: :request do
   end
 
   context 'with valid params' do
-    let(:redis_store_response) { Devise::Web3::RedisStore.new(nil).generate_nonce_with_id }
+    let(:redis_store_response) { Devise::Web3::RedisStore.new.generate_nonce_with_id }
     let(:nonce) { redis_store_response.first }
     let(:nonce_id) { redis_store_response.last }
     let(:key) { Eth::Key.new }

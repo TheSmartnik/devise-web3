@@ -76,7 +76,7 @@ const signature = await ethereum.request({
   params: [web3.utils.fromUtf8(nonce), address],
 })
 ```
-4. Send `signature`, `nonce_id`, `address` to sign in endpoint
+4. Send `{ credenatils: { signature: signature, nonce_id: nonce_id, address: address }}` to sign in endpoint
 
 ## Issues & Improvements
 

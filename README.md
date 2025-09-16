@@ -59,7 +59,7 @@ You're all set. It's time to setup a frontend
 
 ## Frontend Setup
 ### Vue
-For vue you can use a (vue component)[https://github.com/TheSmartnik/devise-web3-vue] or simply check the source code to see the general flow
+For vue you can use a [vue component](https://github.com/TheSmartnik/devise-web3-vue) or simply check the source code to see the general flow
 
 ### General Flow
 1. Fetch user wallet address
